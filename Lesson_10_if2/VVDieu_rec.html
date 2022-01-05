@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TÍNH DIỆN TÍCH CÁC HÌNH</h1>
+    <p>Lựa chọn các hình:</p>
+    <select name="myselect" onchange="do_something()" id="myselect">
+        <option value="0"> Chọn hình </option>
+        <option value="areaREC">Hình chữ Nhật</option>
+        <option value="areaSQA">Hình Vuông</option>
+        <option value="areaCIR">Hình Tròn</option>
+    </select>
+    <div id="form_REC">
+        <p>Nhập chiều cao</p>
+        <input type="number" id="heightREC">
+        <p>Nhập chiều rộng</p>
+        <input type="number" id="widthREC">
+    </div>
+
+    <div id="form_SQA">
+        <p>Nhập chiều cao</p>
+        <input type="number" id="heightSQA">
+    </div>
+
+    <div id="form_CIR">
+        <p>Nhập bán kính</p>
+        <input type="number" id="radiusCIR">
+    </div>
+
+
+    <p><b>Kết quả</b></p>
+    <br>
+    <input type="number" id="resultREC" name="Kết quả">
+    <br>
+    <br>
+    <button type="button" onclick="math_REC()">Tính toán</button>
+    <button type="reset" onclick="reset()">Reset</button>
+</body>
+
+</html>
+<script>
+    document.getElementById("form_REC").style.display = "none";
+    document.getElementById("form_SQA").style.display = "none";
+    document.getElementById("form_CIR").style.display = "none";
+
+    function do_something() {
+        debugger;
+        let selectedvalue = document.getElementById("myselect").value;
+        console.log(selectedvalue);
+        if (selectedvalue == "areaREC") {
+            document.getElementById("form_SQA").style.display = "none";
+            document.getElementById("form_CIR").style.display = "none";
+            document.getElementById("form_REC").style.display = "block";
+        } else if (selectedvalue == "areaSQA") {
+            document.getElementById("form_REC").style.display = "none";
+            document.getElementById("form_CIR").style.display = "none";
+            document.getElementById("form_SQA").style.display = "block";
+        } else if (selectedvalue == "areaCIR") {
+            document.getElementById("form_REC").style.display = "none";
+            document.getElementById("form_SQA").style.display = "none";
+            document.getElementById("form_CIR").style.display = "block";
+        }
+    }
+
+    function math_REC() {
+        let heightREC = document.getElementById("heightREC").value;
+        let widthREC = document.getElementById("widthREC").value;
+        let resultREC = "";
+
+        resultREC = widthREC * heightREC;
+        document.getElementById("resultREC").value = resultREC;
+    }
+
+    function reset() {
+        heightREC.value = "";
+        widthREC.value = "";
+        result.value = "";
+    }
+</script>
