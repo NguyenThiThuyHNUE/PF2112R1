@@ -22,5 +22,7 @@ function xem_gia() {
         case "Măng Cụt":
             document.getElementById("result").innerHTML = "50000 VNĐ/kg";
             break;
+        default:
+            document.write("Vui lòng nhập lại sản phẩm");
     }
 }
