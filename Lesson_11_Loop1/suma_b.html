@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="num1">Nhập số thứ nhất: </label>
+    <input type="number" name="" id="num1"> <br><br>
+    <label for="num2">Nhập số thứ hai: </label>
+    <input type="number" name="" id="num2"> <br><br>
+    <button onclick="sum()">Sum</button>
+    <p id="result"></p>
+    <script>
+        function sum() {
+            let num1 = +document.getElementById("num1").value; //13
+            let num2 = +document.getElementById("num2").value; //7
+            let i, sum = 0;
+            if (num1 < num2) {
+                for (i = num1; i <= num2; i++) {
+                    sum += i;
+                }
+                document.getElementById("result").innerHTML = "Tổng các số từ " + num1 + " đến " + num2 + " là: " + sum;
+            } else {
+                for (i = num2; i <= num1; i++) {
+                    sum += i;
+                }
+                document.getElementById("result").innerHTML = "Tổng các số từ " + num1 + " đến " + num2 + " là: " + sum;
+            }
+        }
+    </script>
+</body>
+
+</html>

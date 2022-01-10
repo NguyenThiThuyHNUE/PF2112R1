@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>In ra các số từ 1 đến 10</h1>
+    <script>
+        // // while
+        // let i = 1;
+        // while (i <= 10) {
+        //     document.write(i + "<br>");
+        //     i++;
+        // }
+
+
+        // //for
+        // let i;
+        // for (i = 11; i <= 10; i++) {
+        //     document.write(i + "<br>");
+        // }
+
+        //Bảng cửu chương
+        // for (let j = 1; j <= 19; j++) {
+        //     for (let i = 1; i <= 20; i++) {
+        //         let product = j * i;
+        //         document.write(j + " * " + i + " = " + product + "</br>");
+        //     }
+        // }
+
+
+        //check 1 số có phải là số  nguyên tố hay không?
+        let number = +prompt("Nhập số cần check");
+        let count = 0;
+        for (let i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            document.write("có là số nguyên tố");
+        } else {
+            document.write('không là số nguyên tố');
+        }
+    </script>
+</body>
+
+</html>
