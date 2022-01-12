@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Tính tổng các số từ 0 đến ...</h1>
     <script>
-        let number = +prompt ("Nhập số")
-        let sum = 0;
-        let i;
-        for (i = 0; i <= number; i++) {
-            sum += i;
+        // let number = +prompt("Nhập số") //-10
+        // let sum = 0;
+        // let i = 1;
+        // for (i = 0; i <= number; i++) {
+        //     sum += i;
+        // }
+
+        // while (i <= number) {
+        //     sum += i;
+        //     i++;
+        // }
+
+        // do {
+        //     sum += i;
+        //     i++;
+        // }
+        // while (i <= number)
+
+        // nếu là số chia hết cho 3 thì thế là fizz
+        // nếu là số chia hết cho 5 thì thế là buzz
+        // nếu là số chia hết cho cả 3 và 5 thì là fizzbuzz
+        // nếu ko thuộc các đk trên thì in ra số đó
+        // 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz,...., fizzbuzz;
+
+        let i = 16;
+        while (i >= 0) {
+            if (i % 3 == 0 && i % 5 !== 0) {
+                document.write("Fizz ,");
+            } else if (i % 5 == 0 && i % 3 !== 0) {
+                document.write("Buzz ,");
+            } else if (i % 3 == 0 && i % 5 == 0) {
+                document.write("FizzBuzz ,");
+            } else {
+                document.write(i + ", ");
+            }
+            i--;
         }
-        document.write( "Tổng các số từ 0 đến " + number + " là: " + sum);
+
+        // for (let i = 0; i <= 10; i++) {
+        //     if (i == 9) {
+        //         continue;
+        //     }
+        //     let k = i + 5;
+        //     document.write(k + ", ");
+        // }
+
+
+
+        // document.write("Tổng các số từ 0 đến " + number + " là: " + sum);
     </script>
 </body>
+
 </html>

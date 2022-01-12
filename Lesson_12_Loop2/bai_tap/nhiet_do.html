@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nhiet_do = +prompt("Nhập nhiệt độ")
+        while (nhiet_do < 20 || nhiet_do > 100) {
+            if (nhiet_do < 20) {
+                alert(" Tăng nhiệt độ");
+            } else {
+                alert("Giảm nhiệt độ");
+            }
+            nhiet_do = +prompt("Nhập nhiệt độ");
+        }
+        document.write("Nhiệt độ an toàn");
+    </script>
+</body>
+
+</html>

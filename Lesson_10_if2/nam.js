@@ -1,10 +1,10 @@
 function year() {
     let year = document.getElementById("year").value;
-    let can = year % 10;
-    let chi = year % 12;
+    let can = year % 10; // lấy số dư
+    let chi = year % 12; //lấy số dư
     let nam_can = "";
     let nam_chi = "";
-    
+
     //Tính can
     switch (can) {
         case 0:
@@ -36,8 +36,12 @@ function year() {
             break;
         case 9:
             nam_can = "Kì";
-            break;              
+            break;
     }
+
+    //canh
+
+
     // Tính chi
     switch (chi) {
         case 0:
@@ -72,11 +76,13 @@ function year() {
             break;
         case 10:
             nam_chi = "Ngọ";
-            break; 
+            break;
         case 11:
             nam_chi = "Mùi";
-            break;              
+            break;
     }
+
+    //nam chi = hợi
     let lunar_year = nam_can + " " + nam_chi;
     document.getElementById("result").innerHTML = lunar_year;
 }

@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>xin  &nbsp; &nbsp; &nbsp; chào</h1> 
+    <h1>xin &nbsp; &nbsp; &nbsp; chào</h1>
     <script>
         // var a = 'something' + '&nbsp' + 'something';
         document.write("A")
-        for (let i = 0; i <10; i++){
+        for (let i = 0; i < 10; i++) {
             document.write(i);
             document.write("&nbsp")
         }
         document.write("B")
 
-// document.body.innerHTML = a;    
+        // document.body.innerHTML = a;    
         //tam giac 1
         document.write("<br>");
-        let i,j;
+        let i, j;
         for (i = 1; i <= 5; i++) {
             for (j = 1; j <= i; j++) {
                 document.write("*");
@@ -29,7 +31,7 @@
         }
         document.write("<br>");
 
-       
+
         for (i = 5; i >= 1; i--) {
             for (j = i; j >= 1; j--) {
                 document.write("*");
@@ -38,10 +40,11 @@
         }
         document.write("<br>");
 
-     
-        for (i = 1; i <= 5; i++) {
-            for (k = 5;  k > i; k--) {
-                document.write("&ensp;");
+
+        for (i = 1; i <= 5; i++) { // 2
+            for (k = 5; k > i; k--) { // 5 -> 3   +++
+                // document.write("&ensp;");
+                document.write("+");
             }
             for (j = 1; j <= i; j++) {
                 document.write("*");
@@ -49,10 +52,10 @@
             document.write("<br>")
         }
         document.write("<br>");
-  
+
 
         for (i = 5; i >= 1; i--) {
-            for (k = 5;  k > i; k--) {
+            for (k = 5; k > i; k--) {
                 document.write("&nbsp" + "&nbsp");
             }
             for (j = i; j >= 1; j--) {
@@ -60,7 +63,7 @@
             }
             document.write("<br>")
         }
-
     </script>
 </body>
+
 </html>

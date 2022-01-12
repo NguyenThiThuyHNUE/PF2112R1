@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        debugger;
+        let a = 1;
+        let b = 0;
+        let fibo = "";
+        let i = 20;
+        // let sum = 0;
+        while (i > 0) { //16
+            fibo = a; //5
+            a = a + b; // a = 5 + 3 = 8;
+            b = fibo; // b = 5;
+            document.write(b + ", ");
+            if (b % 5 == 0) {
+                document.write("số cần tìm là: " + b);
+                break;
+            }
+            // sum += b;
+            i--;
+        }
+
+        // function fibo(n) {
+        //     if (n <= 1)
+        //         return n;
+        //     return fibo(n - 1) + fibo(n - 2);
+
+        // }
+        // console.log(fibo(10));
+    </script>
+
+</body>
+
+</html>
