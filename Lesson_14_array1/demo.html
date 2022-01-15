@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for(let i in arr) {
+        //     document.write(arr[i] + "<br>");
+        // }
+
+        // let students = ["Thiên Ân", "Minh Hiếu", "Tuấn Anh", "Diệu Thúy", "Thanh Lâm"];
+        // let name = "Thiên Ân"
+        // let index = 0;
+        // for (let i in students) {
+        //     if (students[i] == name) {
+        //         index = i;
+        //     }
+        // }
+        // document.write("Có hs tên " + name + " số thứ tự " + index); // 0,1,2,3
+
+        // for (let i of students) {
+        //     document.write(i); // Thiên Ân, Minh Hiếu, Tuấn Anh...
+        // }
+
+        // let numbers = [-4, 5, 6, 8, 9]
+        // let max = numbers[0];
+
+        // let name = prompt("Nhập vào tên cần tìm");
+        // let names = ["Hưng bóng", "Đạt bộ", "Nghĩa sẹo", "Anh", "Phương", "Nguyên", "Thuýkute"];
+        // let flag = false;
+        // let index = 0;
+        // for (let i = names.length; i >= 0; i--) {
+        //     if (names[i] == name) {
+        //         index = i;
+        //         flag = true;
+        //         break;
+        //     }
+        // }
+        // if (flag) {
+        //     document.write("có, nằm ở vị trí thứ " + index);
+        // } else {
+        //     document.write("không");
+        // }
+
+        let numbers = [1.67, 2.22, 3.01, 1, 4, 5, 3, 7, 8, 9, 4, 5, 3, 8, 4, 53, 2]
+        let max = numbers[0]; // 3.01
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        document.write(max)
+    </script>
+</body>
+
+</html>
