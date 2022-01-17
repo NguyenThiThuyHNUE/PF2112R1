@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập dãy kí tự");  // PF2106r1
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for(let x = 0; x < str.length; x++)
+    {
+        if(UPPER.indexOf(str[x]) !== -1) 
+        {
+            result.push(str[x].toLowerCase()); //[p,f,2,1,0,6,R,1]
+        }
+        else if(LOWER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join('')); // pf2106R1
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  let mycolor=["red","green","blue"]
+    // document.write(mycolor.join())
+    let number= prompt("nhập 1 dãy số: ") //24567
+    let result = [number[0]];            //[2]
+    for(let x=1; x<number.length; x++)
+    {
+        if(number[x-1] % 2 == 0 && number[x]%2 == 0)
+        {
+            result.push('-', number[x]); // [2,-,4,5]
+        }
+        else
+        {
+            result.push(number[x]);
+        }
+    }
+    document.write(result.join(''));  //2-4567
+
+</script>
+</body>
+</html>

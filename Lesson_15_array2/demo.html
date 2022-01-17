@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr_2d = [
+            [21,2,3],
+            [114,5,6],
+            [7,8,9]
+        ]
+
+        document.write(arr_2d.length)
+        for (let i = 0; i < arr_2d.length; i++) {
+            for (j = 0; j < arr_2d[i].length; j++) {
+                document.write(arr_2d[i][j] + ",")
+            }
+            document.write("<br>");
+        }
+
+
+
+        document.write("<br>")
+        // Tính tổng các phần tử trong mảng 2 chiều
+        let total = 0;
+        for (let i = 0; i < arr_2d.length; i++) {
+            for (let j = 0; j < arr_2d[i].length; j++) {
+                total += arr_2d[i][j]
+            }
+        }
+        document.write("Tổng các phần tử trong mảng là: " +total);
+
+
+
+
+        document.write("<br>");
+        // Tính tổng các phần tử theo từng cột
+        for (let j = 0; j < arr_2d[0].length; j++) {
+            let total_column = 0;
+            for (let i = 0; i < arr_2d.length; i++) {
+                total_column += arr_2d[i][j]
+            }
+            document.write("Tổng của cột " + j + " là: " + total_column + "<br>");
+        }
+
+
+
+        document.write("<br>");
+        //Tìm hàng có tổng lớn nhất
+        let arr_total_row = [];
+        for (let i = 0; i < arr_2d.length; i++) {
+            let total_row = 0;
+            for (let j = 0; j < arr_2d[i].length; j++) {
+                total_row += arr_2d[i][j];
+            }
+            arr_total_row.push(total_row);
+        }
+
+        let max = arr_total_row[0];
+        let index = 0;
+        for(x = 1; x < arr_total_row.length; x++) {
+            if(max < arr_total_row[x]){
+                max = arr_total_row[x];
+                index = x;
+            }
+        }
+        document.write("Hàng " + index + " có tổng lớn nhất là: " + max);
+
+    </script>
+</body>
+</html>
