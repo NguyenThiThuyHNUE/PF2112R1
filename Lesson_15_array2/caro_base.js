@@ -7,8 +7,8 @@ for (let i = 0; i < 5; i++) {
     board[i] = new Array(0, 0, 0, 0, 0);
 }
 
-let positionX = prompt("X: ");
-    let positionY = prompt("Y: ");
+let positionX = prompt("X: "); //1
+let positionY = prompt("Y: ");//2
     data = "";
     board[positionX][positionY] = "x";
     for (let i = 0; i < 5; i++) {
