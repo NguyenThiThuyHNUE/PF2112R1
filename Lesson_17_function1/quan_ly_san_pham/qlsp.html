@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p><b>ADD NEW PRODUCE</b></p>
+    <p style="height: 50px; width: 300px ; background-color: #dddddd" ><br>
+        <span style="margin-left: 40px" ><input type="text" id="add" placeholder="New produce">
+        <input type="button" value="Add" style="background-color: chartreuse" onclick="add();"></span>
+    </p>
+
+    <br>
+    <p><b>Display All Produce</b></p>
+    <p id="show"></p>
+
+<script>
+    let arr = ["Sony Xperia", "Samsum Galaxy", "Nokia 6", "Xiaomi Redmi Note 4",
+        "Apple Iphone 6S", "Xiaomi Mi 5s Plus", "Apple Iphone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+
+    function show(arr) {
+        let soup = "<table cellpadding='7' width='50%' >"
+        soup = soup + "<tr>"+"<td>"+ "<b>"+"Produce name"+"</b>" + "</td>" +
+            "<td colspan='2' style='text-align: right'>"+ "<b>"+ arr.length + " produce"+"</b>" + "</td>";
+        for (let i = 0; i <arr.length ; i++) {
+            if (i%2==0){
+                soup = soup + "<tr>"
+            }else if (i%2!=0){
+                soup = soup + "<tr style='background-color: #dddddd'>"
+            }
+                soup = soup + "<td>" + arr[i] + "</td>"
+                + "<td>" + "<input type='button' value='Edit' style='background-color: chartreuse' onclick='edit("+i+");'>" + "</td>" +"<td>" +
+                    "<input type='button' value='Delete' style='background-color: chartreuse' onclick='delete1("+i+");'>" + "</td>";
+            soup = soup + "</tr>"
+        }
+        soup = soup + "</table>";
+        return soup;
+    }
+    let soup = show(arr);
+    document.getElementById("show").innerHTML = soup;
+
+
+    function add() {
+        let value = document.getElementById("add").value;
+        arr.push(value);
+        document.getElementById("show").innerHTML = '';
+        let soup = "<table cellpadding='7' width='50%' >";
+        soup = soup + "<tr>"+"<td>"+ "<b>"+"Produce name"+"</b>" + "</td>" +
+            "<td colspan='2' style='text-align: right'>"+ "<b>"+ arr.length + " produce"+"</b>" + "</td>";
+        for (let i = 0; i <arr.length ; i++) {
+            if (i%2==0){
+                soup = soup + "<tr>"
+            }else if (i%2!=0){
+                soup = soup + "<tr style='background-color: #dddddd'>"
+            }
+            soup = soup + "<td>" + arr[i] + "</td>"
+                + "<td>" + "<input type='button' value='Edit' style='background-color: chartreuse' onclick='edit("+i+");'>" + "</td>" +"<td>" +
+                "<input type='button' value='Delete' style='background-color: chartreuse' onclick='delete1("+i+");'>" + "</td>";
+            soup = soup + "</tr>"
+        }
+        soup = soup + "</table>";
+        document.getElementById("show").innerHTML = soup;
+    }
+
+    
+    function delete1(i){
+        let last = arr.length-1;
+        let tam = arr[i];
+        arr[i]=arr[last];
+        for (let j=i;j<arr.length-2;j++){
+            arr[j]=arr[j+1];
+        }
+        arr[last]=tam;
+        arr.pop();
+        document.getElementById("show").innerHTML = '';
+        let soup = "<table cellpadding='7' width='50%' >";
+        soup = soup + "<tr>"+"<td>"+ "<b>"+"Produce name"+"</b>" + "</td>" +
+            "<td colspan='2' style='text-align: right'>"+ "<b>"+ arr.length + " produce"+"</b>" + "</td>";
+        for (let i = 0; i <arr.length ; i++) {
+            if (i%2==0){
+                soup = soup + "<tr>"
+            }else if (i%2!=0){
+                soup = soup + "<tr style='background-color: #dddddd'>"
+            }
+            soup = soup + "<td>" + arr[i] + "</td>"
+                + "<td>" + "<input type='button' value='Edit' style='background-color: chartreuse' onclick='edit("+i+");'>" + "</td>" +"<td>" +
+                "<input type='button' value='Delete' style='background-color: chartreuse' onclick='delete1("+i+");'>" + "</td>";
+            soup = soup + "</tr>"
+        }
+        soup = soup + "</table>";
+        document.getElementById("show").innerHTML = soup;
+    }
+    function edit(i) {
+        let revalue = prompt("Mời bạn nhập giá trị mới: ");
+        arr[i]=revalue;
+        document.getElementById("show").innerHTML = '';
+        let soup = "<table cellpadding='7' width='50%' >";
+        soup = soup + "<tr>"+"<td>"+ "<b>"+"Produce name"+"</b>" + "</td>" +
+            "<td colspan='2' style='text-align: right'>"+ "<b>"+ arr.length + " produce"+"</b>" + "</td>";
+        for (let i = 0; i <arr.length ; i++) {
+            if (i%2==0){
+                soup = soup + "<tr>"
+            }else if (i%2!=0){
+                soup = soup + "<tr style='background-color: #dddddd'>"
+            }
+            soup = soup + "<td>" + arr[i] + "</td>"
+                + "<td>" + "<input type='button' value='Edit' style='background-color: chartreuse' onclick='edit("+i+");'>" + "</td>" +"<td>" +
+                "<input type='button' value='Delete' style='background-color: chartreuse' onclick='delete1("+i+");'>" + "</td>";
+            soup = soup + "</tr>"
+        }
+        soup = soup + "</table>";
+        document.getElementById("show").innerHTML = soup;
+    }
+</script>
+
+</body>
+</html>

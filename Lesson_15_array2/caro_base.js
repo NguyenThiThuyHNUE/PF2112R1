@@ -1,5 +1,5 @@
 function changeValue() {
-    let b = document.getElementById("carogame");
+let b = document.getElementById("carogame");
 
 let board = [];
 let data = "";
