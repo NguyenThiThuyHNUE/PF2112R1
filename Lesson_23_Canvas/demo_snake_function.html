@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <canvas id="game_screen" width="500px" height="500px" style="border: 1px black solid"></canvas>
+
+    <script>
+        let canvas = document.getElementById("game_screen");
+        let context = canvas.getContext("2d");
+
+        function fillBackground() {
+            context.fillStyle = "green";
+            context.fillRect(0, 0, 500, 500);
+        }
+
+
+        // biến toàn cục (global)
+        const LEFT = 1, RIGHT = 2, UP = 3, DOWN = 4;
+        const SPEED = 50;
+        let direction = DOWN;
+        
+        let snakes = [
+            [0, 150],
+            [0, 100],
+            [0, 50],
+            [0, 0],
+        ];
+        
+        function drawSnake() {
+            context.fillStyle = "yellow";
+            for (let i = 0; i < snakes.length; i++) {
+                let x = snakes[i][0];
+                let y = snakes[i][1];
+                context.fillRect(x, y, 50, 50);
+            }
+            
+        }
+
+        fillBackground();
+        drawSnake();
+
+        setInterval(function() {
+
+            context.clearRect(0, 0, 500, 500); // Xóa màn hình
+
+            let snake_x = snakes[0][0];
+            let snake_y = snakes[0][1];
+
+            switch (direction) {
+                case LEFT:
+                    snake_x -= SPEED;
+                    break;
+                case RIGHT:
+                    snake_x += SPEED;
+                    break;
+                case UP:
+                    snake_y -= SPEED;
+                    break;
+                case DOWN:
+                    snake_y += SPEED;
+                    break;
+            }
+            
+            snakes.pop(); // xóa vị trí đuôi rắn
+            snakes.unshift([ snake_x, snake_y ]); // di chuyển đầu rắn
+
+            fillBackground(); // Vẽ game (game.drawScreen())
+            drawSnake();      // snake.draw()
+        }, 300);
+
+        window.addEventListener("keydown", function(e) {
+            let keyCode = e.keyCode;
+
+            const KEY_LEFT = 37, KEY_RIGHT = 39, KEY_UP = 38, KEY_DOWN = 40;
+
+            switch (keyCode) {
+                case KEY_LEFT: direction = LEFT; break;
+                case KEY_RIGHT: direction = RIGHT; break;
+                case KEY_UP: direction = UP; break;
+                case KEY_DOWN: direction = DOWN; break;
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

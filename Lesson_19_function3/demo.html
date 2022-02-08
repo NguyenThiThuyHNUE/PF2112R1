@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let str = prompt("Nhập mảng VD: 1,2,3,4,5"); //"1,2,3,4,5"
+    // let arr = str.split(","); //["1","2","3","4","5"]
+    // arr[i] = Number(arr[i]);
+    //arr2.push(arr[i])
+    let arr = [1,2,3,4,5];
+    // function reverseArray(arr){
+        debugger;
+        let start = 0;
+        let end = arr.length - 1;
+        for(start; start < end; start++, end--) {
+            arr[start] = arr[start] + arr[end];
+            arr[end] = arr[start] - arr[end];
+            arr[start] = arr[start] - arr[end];
+        }
+        console.log(arr);
+        // return arr;
+    // }
+// console.log(reverseArray(arr));
+</script>
+</html>

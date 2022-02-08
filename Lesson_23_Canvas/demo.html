@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="500px" height="400px" style="border: 1px solid #000000" ></canvas>
+    <script>
+        let canvas = document.getElementById("mycanvas");
+        let ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#00e600";
+        ctx.fillRect(100,100,200,200);
+
+
+        // B1: Khai bao: beginPath()
+        // B2: Diem bat dau: moveTo()
+        // B3: Diem ket thuc: lineTo()
+        // B4: To mau: strokeStyle() // co the co hoac khong
+        // B5: stroke();
+
+
+         // Đường thứ nhất
+        ctx.beginPath(); // Khai báo vẽ đường thẳng mới
+        ctx.moveTo(200,100); // Xác định điểm bắt đầu
+        ctx.lineTo(200,300); // Xác định điểm kết thúc
+        ctx.strokeStyle = '#990000' // Màu của đường thẳng
+
+        ctx.arc(200, 200, 100, 0, 2*Math.PI)
+        
+        ctx.stroke(); // Tiến hành vẽ
+
+        //Duong thu hai
+        ctx.beginPath();
+        ctx.moveTo(100,200);
+        ctx.lineTo(300,200);
+        ctx.strokeStyle = "#990000";
+        ctx.stroke();
+    </script>
+
+
+
+    <!-- <canvas id="myCanvas" width="1200" height="600" style="border: 2px solid #a03939"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas"); // vẽ hình trên canvas có id là "myCanvas"
+        let ctx = canvas.getContext("2d"); // ;Vẽ hình 2d
+        //Vẽ hình chữ nhật
+        ctx.fillStyle = "red";
+        ctx.shadowColor = "black";
+        ctx.fillRect(0,0,200, 100);
+        
+
+        // vẽ hình tròn
+        ctx.arc(200,200,50,0, 2*Math.PI);
+
+        ctx.font = "40px Arial";
+        ctx.fillText("Hello",200,60);
+        ctx.stroke();
+
+
+
+        // Đường thứ nhất
+        ctx.beginPath(); // Khai báo vẽ đường thẳng mới
+        ctx.moveTo(0,0); // Xác định điểm bắt đầu
+        ctx.lineTo(500,200); // Xác định điểm kết thúc
+        ctx.strokeStyle = 'red' // Màu của đường thẳng
+        ctx.stroke(); // Tiến hành vẽ
+
+        // Đường thứ hai
+        ctx.beginPath(); // Khai báo vẽ đường thẳng mới
+        ctx.moveTo(0,200); // Xác định điểm bắt đầu
+        ctx.lineTo(250,100); // Xác định điểm kết thúc
+        ctx.strokeStyle = 'brown' // Màu của đường thẳng
+        ctx.lineWidth = 3; //Độ rộng
+        ctx.stroke(); // Tiến hành vẽ
+    </script> -->
+</body>
+</html>
