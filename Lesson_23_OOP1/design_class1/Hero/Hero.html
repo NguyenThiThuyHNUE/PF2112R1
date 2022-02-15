@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="game"></div>
+<div id="pikachu_race"></div>
+<br>
+<div id="tho_race"></div>
+<br>
+<div id="rua_race"></div>
+<script>
+
+    function Hero(image, top, left, size){
+    this.image = image;
+    this.top = top;
+    this.left = left;
+    this.size = size;
+
+    this.getHeroElement = function(){
+        return '<img width="'+ this.size + '"' +
+        ' height="'+ this.size + '"' +
+        ' src="' + this.image +'"' +
+        ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+    }
+
+    // getHeroElement() {
+    //     return '<img width="'+ this.size + '"' +
+    //     ' height="'+ this.size + '"' +
+    //     ' src="' + this.image +'"' +
+    //     ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+    // }
+
+    this.moveRight = function(){
+        this.left += 100;
+        console.log('ok: ' + this.left);
+    }
+
+    this.moveLeft = function(){
+        this.left -= 100;
+        console.log('ok: ' + this.left);
+    }
+
+    }
+
+    let hero = new Hero('img/tho.jpg', 20, 30, 200);
+
+    function start(){
+    if(hero.left < window.innerWidth - hero.size){
+        hero.moveRight();
+    }
+    document.getElementById('game').innerHTML = hero.getHeroElement();
+
+    setTimeout(start, 300)
+    }
+
+    start();
+
+
+    // class Hero{
+    //     constructor(image, top, left, size) {
+    //         this._image = image;
+    //         this._top = top;
+    //         this._left = left;
+    //         this._size = size;
+    //     }
+
+    //     get image() {
+    //         return this._image;
+    //     }
+
+    //     set image(value) {
+    //         this._image = value;
+    //     }
+
+    //     get top() {
+    //         return this._top;
+    //     }
+
+    //     set top(value) {
+    //         this._top = value;
+    //     }
+
+    //     get left() {
+    //         return this._left;
+    //     }
+
+    //     set left(value) {
+    //         this._left = value;
+    //     }
+
+    //     get size() {
+    //         return this._size;
+    //     }
+
+    //     set size(value) {
+    //         this._size = value;
+    //     }
+
+    //     getHeroElement (){
+    //         return '<img width="'+ this.size + '"' +
+    //             ' height="'+ this.size + '"' +
+    //             ' src="' + this.image +'"' +
+    //             ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+    //     };
+
+    //     moveRight (speech){
+    //         this.left += speech;
+    //     };
+    // }
+    // let pikachu = new Hero('img/pikachu.png', 20, 30, 200);
+    // let tho = new Hero('img/tho.jpg',200,30,200);
+    // let rua = new Hero('img/rua.png',400,30,200);
+
+    // let pikachu_sp = 0;
+    // let tho_sp = 0;
+    // let rua_sp = 0;
+
+    // function start(){
+    //     if(pikachu.left < window.innerWidth - pikachu.size){
+    //         pikachu.moveRight(pikachu_sp);
+    //         if(pikachu_sp < window.innerWidth/2){
+    //             pikachu_sp+=1;
+    //         }else {
+    //             pikachu_sp += 0.01;
+    //         }
+    //     }
+
+    //     if(tho.left < window.innerWidth - tho.size){
+    //         tho.moveRight(tho_sp);
+    //         if(tho_sp < window.innerWidth/2){
+    //             tho_sp += 1.1;
+    //         }else {
+    //             tho_sp+=0.002;
+    //         }
+    //     }
+    //     if(rua.left < window.innerWidth - rua.size){
+    //         rua.moveRight(rua_sp);
+    //         rua_sp+=0.99;
+    //     }
+    //     document.getElementById('pikachu_race').innerHTML = pikachu.getHeroElement();
+    //     document.getElementById('tho_race').innerHTML = tho.getHeroElement();
+    //     document.getElementById('rua_race').innerHTML = rua.getHeroElement();
+    //     setTimeout(start, 200);
+    // }
+    // start();
+</script>
+</body>
+</html>

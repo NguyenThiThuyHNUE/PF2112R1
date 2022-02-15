@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function area (CD,CR) {
+        //     let DT = CD * CR;
+        //     return DT;
+        // }
+        // function color (color) {
+        //     return color;
+        // }
+        // document.write(color("red"));
+
+        // let CR = prompt("Nhap chieu rong:");
+        // let CD = prompt("Nhap chieu dai");
+        // document.write(area(CD,CR));
+
+        // class HCN {
+        //     constructor (a,b, color) {
+        //         this.a = a;
+        //         this.b = b;
+        //         this.color = color;
+        //         console.log(this.a);
+        //     }
+
+        //     dt() {
+        //         return this.a* this.b;
+        //     }
+        //     cv() {
+        //         return (this.a+ this.b)*2;
+        //     }
+
+        //     getColor() {
+        //         return this.color
+        //     }
+
+        // }
+        // let hcn1 = new HCN(3,6,"red");
+        // let hcn2 = new HCN(4,7,"green");
+        // document.write(hcn1.dt());
+        // document.write(hcn1.cv());
+        // document.write(hcn1.getColor());
+
+        // function demo () {
+        //     // let args = Array.from(arguments);
+        //     // var args = Array.prototype.slice.call(arguments);
+        //     // Using an array literal is shorter than above but allocates an empty array
+        //     // var args = [].slice.call(arguments);
+        //     console.log(typeof(arguments));
+        // }
+        // demo(1,2,3,4,5)
+
+        class EmployeeCity {
+            empCode
+            empName
+
+            constructor(code, name) {
+                this.empName = name;
+                this.empCode = code;
+            }
+
+            display = () => console.log(this +' ' + this.empName)
+}
+let emp = new Employee(1, 'Ram');
+emp.display();
+
+    </script>
+</body>
+</html>

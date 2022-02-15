@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            celsius;
+            constructor(c){
+                this.celsius = c;
+            }
+            convertCtoK(){
+                return (this.celsius+273.15) + "K";
+            }
+
+            convertCtoF(){
+                return (this.celsius*1.8 + 32) + "F";
+            }
+        }
+
+        let tem1 = new Temperature(25);
+        // document.write(tem1.convertCtoF() + "<br>");
+        // document.write(tem1.convertCtoK());
+        let tem2 = new Temperature(30);
+        document.write(Temperature);
+        // document.write(tem2.convertCtoF());
+
+    </script>
+</body>
+</html>

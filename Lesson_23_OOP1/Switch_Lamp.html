@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ElectricLamp {
+
+            constructor(){};
+
+            turnOn() {
+                this.status = true;
+                return this.status;
+            }
+            turnOff() {
+                this.status = false;
+                return this.status;
+            }
+            
+            getStatus() {
+                if (this.status) {
+                    alert("Light On")
+                } else{
+                    alert("Light Off")
+                }
+            }
+        }
+
+        class SwitchButton {
+            constructor(s,l) {
+                this.status = s;
+                this.lamp = l;
+            }
+            connectToLamp(ElectricLamp) {
+                this.lamp = ElectricLamp;
+            }
+
+            switchOff(){
+                this.status = false;
+                this.lamp.turnOff();
+                this.lamp.getStatus();
+            }
+
+            switchOn() {
+                this.status = true;
+                this.lamp.turnOn();
+                this.lamp.getStatus;
+            } 
+        }
+
+        let lamp1 = new ElectricLamp()
+        let switch1 = new SwitchButton(true,lamp1); //Cong tac 1 dieu khien bong den 1
+        switch1.switchOn();
+        switch1.switchOff();
+
+    </script>
+</body>
+</html>
