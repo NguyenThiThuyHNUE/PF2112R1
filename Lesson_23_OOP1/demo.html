@@ -56,19 +56,12 @@
         // }
         // demo(1,2,3,4,5)
 
-        class EmployeeCity {
-            empCode
-            empName
+let message = 'Hello';
+let [a, b] = message;
+let [x, y, ...z] = message;
 
-            constructor(code, name) {
-                this.empName = name;
-                this.empCode = code;
-            }
-
-            display = () => console.log(this +' ' + this.empName)
-}
-let emp = new Employee(1, 'Ram');
-emp.display();
+console.log(a, b);    // H e
+console.log(x, y, z);
 
     </script>
 </body>

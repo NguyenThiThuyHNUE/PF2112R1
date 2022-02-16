@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        class Rect {
+            constructor(x,y,width,heigh) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.heigh = heigh;
+            }
+        }
+
+
+        class Circle {
+            constructor (x, y, radius) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+            }
+        }
+
+
+        let rect_1 = new Rect(20,20,90,70);
+        let circle_1 = new Circle(100, 100, 20);
+
+
+        let ctx = document.getElementById("canvas").getContext("2d");
+        ctx.fillRect(rect_1.x, rect_1.y, rect_1.width, rect_1.heigh);
+
+        ctx.arc(circle_1.x, circle_1.y, circle_1.radius, 0, 2* Math.PI);
+        ctx.fillStyle = "#ff7500";  
+        ctx.fill();
+
+        function checkCollision(cir, rect) {
+            let Ax = cir.x;
+            let Ay = cir.y;
+
+            let rect_left = rect.x;
+            let rect_top = rect.y;
+            let rect_right = rect.x + rect.width;
+            let rect_bottom = rect.y + rect.heigh;
+
+            if (cir.x < rect_left)
+                Ax = rect_left;
+            else if (cir.x > rect_right)
+                Ax = rect_right;
+
+            if (cir.y < rect_top)
+                Ay = rect_top;
+            else if (cir.y > rect_bottom)
+                Ay = rect_bottom;
+
+            let dx = cir.x - Ax;
+            let dy = cir.y - Ay;
+
+            return (dx * dx + dy * dy) <= cir.radius * cir.radius;
+        }
+
+        alert(checkCollision(circle_1,rect_1))
+        
+        
+        // class Main {
+        //     constructor(rect1,rect2){
+        //         this.rect1 = rect_1;
+        //         this.rect2 = rect_2;
+        //         this.ox = Math.abs(this.rect1.x + this.rect1.weight/2) - Math.abs(this.rect2.x + this.rect2.weight/2) <= Math.abs((this.rect1.weight + this.rect2.weight)/2)
+        //         this.oy = Math.abs(this.rect1.y + this.rect1.heigh/2) - Math.abs(this.rect2.y + this.rect2.heigh/2) <= Math.abs((this.rect1.heigh + this.rect2.heigh)/2)
+        //     }
+
+        //     isCollision() {
+        //         if (this.ox && this.oy) {
+        //             alert ("Hai hình chữ nhật va chạm")
+        //         } else {
+        //             alert("Hai hình chữ nhật không va chạm")
+        //         }
+        //     }
+        // }
+
+        // let main = new Main(rect_1, rect_2);
+        // main.isCollision();
+
+    </script>
+</body>
+</html>

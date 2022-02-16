@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        class Rect {
+            constructor(x,y,width,heigh) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.heigh = heigh;
+            }
+        }
+
+        let rect_1 = new Rect(20,20,90,70);
+        let rect_2 = new Rect(50,50,100,80);
+
+        let ctx = document.getElementById("canvas").getContext("2d");
+        ctx.fillRect(rect_1.x, rect_1.y, rect_1.width, rect_1.heigh);
+        ctx.fillRect(rect_2.x, rect_2.y, rect_2.width, rect_2.heigh);
+
+        class Main {
+            constructor(rect1,rect2){
+                this.rect1 = rect_1;
+                this.rect2 = rect_2;
+                this.ox = Math.abs(this.rect1.x + this.rect1.width/2) - Math.abs(this.rect2.x + this.rect2.width/2) <= Math.abs((this.rect1.width + this.rect2.width)/2)
+                this.oy = Math.abs(this.rect1.y + this.rect1.heigh/2) - Math.abs(this.rect2.y + this.rect2.heigh/2) <= Math.abs((this.rect1.heigh + this.rect2.heigh)/2)
+            }
+
+            isCollision() {
+                if (this.ox && this.oy) {
+                    alert ("Hai hình chữ nhật va chạm");
+                } else {
+                    alert("Hai hình chữ nhật không va chạm");
+                }
+            }
+        }
+
+        let main = new Main(rect_1, rect_2);
+        main.isCollision();
+
+        // let x1 = 50;
+        // let y1 = 100;
+        // let width1 = 100;
+        // let height1 = 50;
+        // let x2 = 200;
+        // let y2 = 10;
+        // let width2 = 200;
+        // let height2 = 100;
+        // let ox = Math.abs((x1 + width1/2) - (x2 + width2/2)) <= Math.abs((width1+width2)/2);
+        // let oy = Math.abs((y1 + height1/2) - (y2 + height2/2)) <= Math.abs((height1+height2)/2);
+        // console.log(ox);
+        // console.log(oy);
+
+        // let ctx = document.getElementById("canvas").getContext("2d");
+        // ctx.fillRect(x1, y1, width1, height1);
+        // ctx.fillRect(x2, y2, width2, height2);
+
+
+    </script>
+</body>
+</html>
