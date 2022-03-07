@@ -24,4 +24,4 @@ function check_star(star) {
 
 }
 let star = prompt("Nhập vào ngôi sao: ")
-document.write(checÍk_star(star));
+document.write(check_star(star));
