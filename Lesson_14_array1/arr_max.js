@@ -20,4 +20,4 @@ for (let i = 1; i < arr.length; i++) {
         index = i;
     }
 }
-document.write("Số lớn nhất trong mảng là " + max + "<br>" + "Vị trí thứ: " + index)
+document.write("Mảng  "+arr+" có:" +"</br>"+"số lớn nhất trong mảng là " + max + "<br>" + "Vị trí thứ: " + index)
